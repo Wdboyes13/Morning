@@ -18,9 +18,9 @@ jobs:
 
       - name: Build the Xcode project
         run: |
-          /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build
+          /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build -deriedDataPath ./build
           # Replace Morning.xcodeproj with your actual project file if needed
           
       - name: Create Release
         run: |
-          gh release create "$(date +"%Y-%m-%d-%H-%M-%S")" Morning.app --title "$(date +"%Y-%m-%d-%H-%M-%S")" --notes "Release created on $(date +"%Y-%m-%d-%H-%M-%S")" --repo Wdboyes13/Morning
+          gh release create "$(date +"%Y-%m-%d-%H-%M-%S")" build/Morning.app --title "$(date +"%Y-%m-%d-%H-%M-%S")" --notes "Release created on $(date +"%Y-%m-%d-%H-%M-%S")" --repo Wdboyes13/Morning
