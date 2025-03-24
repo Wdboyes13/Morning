@@ -16,9 +16,6 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Set up Xcode
-        run: sudo xcode-select --switch /Applications/Xcode.app  # Switch to Xcode 16.2
-
       - name: Build the Xcode project
         run: |
           /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build
