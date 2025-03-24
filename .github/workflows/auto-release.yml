@@ -28,7 +28,7 @@ jobs:
 
       - name: Build the Xcode project
         run: |
-          xcodebuild -project YourProject.xcodeproj -scheme YourScheme -configuration Release clean build
+          xcodebuild -project Morning.xcodeproj -scheme Morning-Rem -configuration Release clean build
           # Replace YourProject.xcodeproj with your actual project file and YourScheme with your build scheme
 
       - name: Upload build artifacts (optional)
