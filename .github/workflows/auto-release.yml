@@ -32,7 +32,7 @@ jobs:
           # Replace YourProject.xcodeproj with your actual project file and YourScheme with your build scheme
 
       - name: Upload build artifacts (optional)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: build
           path: .
