@@ -15,11 +15,8 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
-      - name: List installed Xcode versions
-        run: sudo ls /Applications | grep Xcode
-
       - name: List available schemes
-        run: xcodebuild -list
+        run: /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcodebuild -list
       - name: Build the Xcode project
         run: |
          /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme Morning-Rem -configuration Release clean build
