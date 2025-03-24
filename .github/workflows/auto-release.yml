@@ -14,7 +14,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Set Up Xcode
-        run: sudo xcode-select --switch /Applications/Xcode_16.app
+        run: sudo xcode-select --switch /Applications/Xcode.app
         
   build:
     runs-on: macos-latest  # Use a macOS runner to build the Xcode project
