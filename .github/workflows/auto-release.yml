@@ -23,4 +23,4 @@ jobs:
           
       - name: Create Release
         run: |
-          gh release create "$(date +"%Y-%m-%d-%H-%M-%S")" build.zip --title "$(date +"%Y-%m-%d-%H-%M-%S")" --notes "Release created on $(date +"%Y-%m-%d-%H-%M-%S")" --repo Wdboyes13/Morning
+          gh release create "$(date +"%Y-%m-%d-%H-%M-%S")" Morning.app --title "$(date +"%Y-%m-%d-%H-%M-%S")" --notes "Release created on $(date +"%Y-%m-%d-%H-%M-%S")" --repo Wdboyes13/Morning
