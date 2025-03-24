@@ -9,26 +9,16 @@ on:
       - main  # Trigger on pull requests to the main branch
 
 jobs:
-
-  setup:
-    runs-on: macos-latest
-    steps:
-      - name: Set Up Xcode
-        run: sudo xcode-select --switch /Applications/Xcode.app
         
   build:
     runs-on: macos-latest  # Use a macOS runner to build the Xcode project
-    needs: setup
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Set up Xcode
-        run: sudo xcode-select --switch /Applications/Xcode.app  # Optional, specify your Xcode version
-
       - name: Build the Xcode project
         run: |
-          xcodebuild -project Morning.xcodeproj -scheme Morning-Rem -configuration Release clean build
+         /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme Morning-Rem -configuration Release clean build
           # Replace YourProject.xcodeproj with your actual project file and YourScheme with your build scheme
 
       - name: Upload build artifacts (optional)
