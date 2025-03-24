@@ -10,7 +10,7 @@ on:
 
 jobs:
         
-  build:
+  build-and-release:
     runs-on: self-hosted  # Use a macOS runner to build the Xcode project
     steps:
       - name: Check out the repository
@@ -21,8 +21,6 @@ jobs:
           /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build
           # Replace Morning.xcodeproj with your actual project file if needed
           
-      - name: Upload build artifacts (optional)
-        uses: actions/upload-artifact@v4.6.2
-        with:
-          name: build
-          path: .
+      - name: Create Release
+        run: |
+          gh release create "$(date +"%Y-%m-%d-%H-%M-%S")" build.zip --title "$(date +"%Y-%m-%d-%H-%M-%S")" --notes "Release created on $(date +"%Y-%m-%d-%H-%M-%S")" --repo Wdboyes13/Morning
