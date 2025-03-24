@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Morning</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>x86_64</string>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>FE764AA7272E54BA6C1AE963ED6803D8C2F9245E</string>
+				<key>dateExpires</key>
+				<string>2026-02-24</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>com.apple.security.app-sandbox</key>
+				<true/>
+				<key>com.apple.security.files.user-selected.read-only</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>Morning.app</string>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>8L3UY5N9LD</string>
+				<key>name</key>
+				<string>William Boyes</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
