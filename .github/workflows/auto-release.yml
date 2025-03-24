@@ -9,21 +9,30 @@ on:
       - main  # Trigger on pull requests to the main branch
 
 jobs:
+
+  setup:
+    runs-on: macos-latest
+    steps:
+      - name: Set Up Xcode
+        run: sudo xcode-select --switch /Applications/Xcode_16.2.app  # Specify Xcode 16.2 here
         
   build:
     runs-on: macos-latest  # Use a macOS runner to build the Xcode project
+    needs: setup
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
-      - name: List available schemes
-        run: /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcodebuild -list
+
+      - name: Set up Xcode
+        run: sudo xcode-select --switch /Applications/Xcode_16.2.app  # Switch to Xcode 16.2
+
       - name: Build the Xcode project
         run: |
-         /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme Morning-Rem -configuration Release clean build
-          # Replace YourProject.xcodeproj with your actual project file and YourScheme with your build scheme
-
+          xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build
+          # Replace Morning.xcodeproj with your actual project file if needed
+          
       - name: Upload build artifacts (optional)
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v2
         with:
           name: build
           path: .
