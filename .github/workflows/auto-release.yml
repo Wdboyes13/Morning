@@ -18,7 +18,7 @@ jobs:
 
       - name: Build the Xcode project
         run: |
-          /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build -deriedDataPath ./build
+          /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme "Morning-Rem" -configuration Release clean build -derivedDataPath ./build
           # Replace Morning.xcodeproj with your actual project file if needed
           
       - name: Create Release
