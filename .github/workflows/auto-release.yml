@@ -1,0 +1,38 @@
+name: Build Xcode Project
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the main branch
+
+jobs:
+
+  setup:
+    runs-on: macos-latest
+    steps:
+      - name: Set Up Xcode
+        run: sudo xcode-select --switch /Applications/Xcode_16.app
+        
+  build:
+    runs-on: macos-latest  # Use a macOS runner to build the Xcode project
+    needs: setup
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Xcode
+        run: sudo xcode-select --switch /Applications/Xcode_16.app  # Optional, specify your Xcode version
+
+      - name: Build the Xcode project
+        run: |
+          xcodebuild -project YourProject.xcodeproj -scheme YourScheme -configuration Release clean build
+          # Replace YourProject.xcodeproj with your actual project file and YourScheme with your build scheme
+
+      - name: Upload build artifacts (optional)
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: .
