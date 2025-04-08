@@ -1,0 +1,403 @@
+[2025-03-24 08:34:39Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'Credentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'Runner': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner'
+[2025-03-24 08:34:39Z INFO Listener] Runner is built for OSX (Arm64) - osx-arm64.
+[2025-03-24 08:34:39Z INFO Listener] RuntimeInformation: Darwin 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan  2 20:23:36 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8112.
+[2025-03-24 08:34:39Z INFO Listener] Version: 2.323.0
+[2025-03-24 08:34:39Z INFO Listener] Commit: d8b82f44a9ec0258904d5869ae683c31d5aac299
+[2025-03-24 08:34:39Z INFO Listener] Culture: en-CA
+[2025-03-24 08:34:39Z INFO Listener] UI Culture: en-CA
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO Listener] Validating directory permissions for: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO CommandLineParser] Parse
+[2025-03-24 08:34:39Z INFO CommandLineParser] Parsing 1 args
+[2025-03-24 08:34:39Z INFO CommandLineParser] parsing argument
+[2025-03-24 08:34:39Z INFO CommandLineParser] HasArgs: False
+[2025-03-24 08:34:39Z INFO CommandLineParser] Adding Command: run
+[2025-03-24 08:34:39Z INFO Listener] Arguments parsed
+[2025-03-24 08:34:39Z INFO Runner] ExecuteCommand
+[2025-03-24 08:34:39Z INFO ConfigurationStore] currentAssemblyLocation: /Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Listener.dll
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] binPath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/bin
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] RootFolder: /Users/william/Documents/coding2.nosync/Morning/actions-runner
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'Runner': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] ConfigFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'MigratedRunner': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner_migrated'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] MigratedConfigFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner_migrated
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'Credentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] CredFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_migrated'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] MigratedCredFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_migrated
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'Service': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.service'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.service
+[2025-03-24 08:34:39Z INFO CommandSettings] Flag 'help': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Flag 'version': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Flag 'commit': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Flag 'check': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Command 'configure': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Command 'remove': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Command 'warmup': 'False'
+[2025-03-24 08:34:39Z INFO ConfigurationManager] LoadSettings
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsConfigured()
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsConfigured: True
+[2025-03-24 08:34:39Z INFO ConfigurationManager] Is configured: True
+[2025-03-24 08:34:39Z INFO ConfigurationStore] Read setting file: 298 chars
+[2025-03-24 08:34:39Z INFO ConfigurationManager] Settings Loaded
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsServiceConfigured()
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsServiceConfigured: False
+[2025-03-24 08:34:39Z INFO CommandSettings] Command 'run': 'True'
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsConfigured()
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsConfigured: True
+[2025-03-24 08:34:39Z INFO ConfigurationManager] Is configured: True
+[2025-03-24 08:34:39Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2025-03-24 08:34:39Z INFO Runner] Set runner startup type - Manual
+[2025-03-24 08:34:39Z INFO CommandSettings] Flag 'once': 'False'
+[2025-03-24 08:34:39Z INFO CommandSettings] Flag 'once': 'False'
+[2025-03-24 08:34:39Z INFO Runner] RunAsync
+[2025-03-24 08:34:39Z INFO ConfigurationManager] LoadSettings
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsConfigured()
+[2025-03-24 08:34:39Z INFO ConfigurationStore] IsConfigured: True
+[2025-03-24 08:34:39Z INFO ConfigurationManager] Is configured: True
+[2025-03-24 08:34:39Z INFO ConfigurationManager] Settings Loaded
+[2025-03-24 08:34:39Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "williamsmacbook",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus5.actions.githubusercontent.com/RFXg87af0T06gJQkU6A1llVzIdHhIxsQ7C5OzWux56IP7mjSHq/",
+  "GitHubUrl": "https://github.com/Wdboyes13/Morning",
+  "WorkFolder": "_work"
+}
+[2025-03-24 08:34:39Z INFO MessageListener] Loading Credentials
+[2025-03-24 08:34:39Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:34:39Z INFO ConfigurationStore] stored True
+[2025-03-24 08:34:39Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:34:39Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:34:39Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:34:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:34:39Z INFO HostContext] Well known config file 'RSACredentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams'
+[2025-03-24 08:34:39Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:34:39Z INFO MessageListener] Attempt to create session.
+[2025-03-24 08:34:39Z INFO MessageListener] Connecting to the Runner Server...
+[2025-03-24 08:34:39Z INFO RunnerServer] EstablishVssConnection
+[2025-03-24 08:34:39Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2025-03-24 08:34:39Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-03-24 08:34:39Z INFO RunnerServer] EstablishVssConnection
+[2025-03-24 08:34:39Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-03-24 08:34:39Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-03-24 08:34:39Z INFO RunnerServer] EstablishVssConnection
+[2025-03-24 08:34:39Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-03-24 08:34:39Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-03-24 08:34:39Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-03-24 08:34:39Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-03-24 08:34:39Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-03-24 08:34:39Z INFO MessageListener] VssConnection created
+[2025-03-24 08:34:39Z INFO Terminal] WRITE LINE: 
+[2025-03-24 08:34:39Z INFO Terminal] WRITE LINE: 
+[2025-03-24 08:34:39Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:34:40Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:34:40Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:34:40Z INFO MessageListener] Session created.
+[2025-03-24 08:34:40Z INFO Terminal] WRITE LINE: Current runner version: '2.323.0'
+[2025-03-24 08:34:40Z INFO Terminal] WRITE LINE: 2025-03-24 08:34:40Z: Listening for Jobs
+[2025-03-24 08:34:40Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2025-03-24 08:34:40Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:34:41Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:36:43Z INFO MessageListener] Message '7645030908640866270' received from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed'.
+[2025-03-24 08:36:43Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:36:43Z INFO ConfigurationStore] stored True
+[2025-03-24 08:36:43Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:36:43Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:36:43Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:36:43Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:36:43Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:36:43Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:36:44Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:36:45Z INFO JobDispatcher] Job request 0 for plan 1d677983-d338-40ab-8cff-abcb32cd75c1 job 12288638-892a-519f-8370-a6d6f5c1d098 received.
+[2025-03-24 08:36:45Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-03-24 08:36:45Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-03-24 08:36:45Z INFO Terminal] WRITE LINE: 2025-03-24 08:36:45Z: Running job: build
+[2025-03-24 08:36:45Z INFO JobDispatcher] Start renew job request 0 for job 12288638-892a-519f-8370-a6d6f5c1d098.
+[2025-03-24 08:36:45Z INFO JobDispatcher] Successfully renew job 12288638-892a-519f-8370-a6d6f5c1d098, job is valid till 2025-03-24 8:46:45 AM
+[2025-03-24 08:36:45Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 150 153'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-03-24 08:36:45Z INFO ProcessInvokerWrapper] Process started with process id 65522, waiting for process exit.
+[2025-03-24 08:36:45Z INFO JobDispatcher] Send job request message to worker for job 12288638-892a-519f-8370-a6d6f5c1d098.
+[2025-03-24 08:36:45Z INFO ProcessChannel] Sending message of length 19338, with hash '1f0e422944b64187b1b373edc72f4293badce16bd842d5505fc38fd6047e94e8'
+[2025-03-24 08:36:45Z INFO JobNotification] Entering JobStarted Notification
+[2025-03-24 08:36:45Z INFO JobNotification] Entering StartMonitor
+[2025-03-24 08:37:27Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:37:27Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:37:27Z INFO ProcessInvokerWrapper] Finished process 65522 with exit code 100, and elapsed time 00:00:41.4736334.
+[2025-03-24 08:37:27Z INFO JobDispatcher] Worker finished for job 12288638-892a-519f-8370-a6d6f5c1d098. Code: 100
+[2025-03-24 08:37:27Z INFO JobDispatcher] finish job request for job 12288638-892a-519f-8370-a6d6f5c1d098 with result: Succeeded
+[2025-03-24 08:37:27Z INFO Terminal] WRITE LINE: 2025-03-24 08:37:27Z: Job build completed with result: Succeeded
+[2025-03-24 08:37:27Z INFO JobDispatcher] Stop renew job request for job 12288638-892a-519f-8370-a6d6f5c1d098.
+[2025-03-24 08:37:27Z INFO JobDispatcher] job renew has been cancelled, stop renew job 12288638-892a-519f-8370-a6d6f5c1d098.
+[2025-03-24 08:37:27Z INFO JobNotification] Entering JobCompleted Notification
+[2025-03-24 08:37:27Z INFO JobNotification] Entering EndMonitor
+[2025-03-24 08:37:27Z INFO MessageListener] Received job status event. JobState: Online
+[2025-03-24 08:38:09Z INFO MessageListener] Message '1890042330479721225' received from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed'.
+[2025-03-24 08:38:09Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:38:09Z INFO ConfigurationStore] stored True
+[2025-03-24 08:38:09Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:38:09Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:38:09Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:38:09Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:38:09Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:38:09Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:38:09Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:38:10Z INFO JobDispatcher] Job request 0 for plan 6df47e1c-8202-4c5b-a881-8b9b043e6dc0 job d792edf2-ac8d-51be-bd49-b6895ec3b27d received.
+[2025-03-24 08:38:10Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-03-24 08:38:10Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-03-24 08:38:10Z INFO JobDispatcher] Job request 12288638-892a-519f-8370-a6d6f5c1d098 processed succeed.
+[2025-03-24 08:38:10Z INFO Terminal] WRITE LINE: 2025-03-24 08:38:10Z: Running job: build
+[2025-03-24 08:38:10Z INFO JobDispatcher] Start renew job request 0 for job d792edf2-ac8d-51be-bd49-b6895ec3b27d.
+[2025-03-24 08:38:10Z INFO JobDispatcher] Successfully renew job d792edf2-ac8d-51be-bd49-b6895ec3b27d, job is valid till 2025-03-24 8:48:10 AM
+[2025-03-24 08:38:10Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 150 153'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-03-24 08:38:10Z INFO ProcessInvokerWrapper] Process started with process id 65937, waiting for process exit.
+[2025-03-24 08:38:10Z INFO JobDispatcher] Send job request message to worker for job d792edf2-ac8d-51be-bd49-b6895ec3b27d.
+[2025-03-24 08:38:10Z INFO ProcessChannel] Sending message of length 18942, with hash '28b613875b43df16977bf61093485bcff66b31058efc5160e915fa9f5c7d981d'
+[2025-03-24 08:38:10Z INFO JobNotification] Entering JobStarted Notification
+[2025-03-24 08:38:10Z INFO JobNotification] Entering StartMonitor
+[2025-03-24 08:38:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:38:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:38:30Z INFO ProcessInvokerWrapper] Finished process 65937 with exit code 100, and elapsed time 00:00:19.2835077.
+[2025-03-24 08:38:30Z INFO JobDispatcher] Worker finished for job d792edf2-ac8d-51be-bd49-b6895ec3b27d. Code: 100
+[2025-03-24 08:38:30Z INFO JobDispatcher] finish job request for job d792edf2-ac8d-51be-bd49-b6895ec3b27d with result: Succeeded
+[2025-03-24 08:38:30Z INFO Terminal] WRITE LINE: 2025-03-24 08:38:30Z: Job build completed with result: Succeeded
+[2025-03-24 08:38:30Z INFO JobDispatcher] Stop renew job request for job d792edf2-ac8d-51be-bd49-b6895ec3b27d.
+[2025-03-24 08:38:30Z INFO JobDispatcher] job renew has been cancelled, stop renew job d792edf2-ac8d-51be-bd49-b6895ec3b27d.
+[2025-03-24 08:38:30Z INFO JobNotification] Entering JobCompleted Notification
+[2025-03-24 08:38:30Z INFO JobNotification] Entering EndMonitor
+[2025-03-24 08:38:30Z INFO MessageListener] Received job status event. JobState: Online
+[2025-03-24 08:47:30Z INFO MessageListener] Message '6276368717027112735' received from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed'.
+[2025-03-24 08:47:30Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:47:30Z INFO ConfigurationStore] stored True
+[2025-03-24 08:47:30Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:47:30Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:47:30Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:47:30Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:47:30Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:47:30Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:47:30Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:47:31Z INFO JobDispatcher] Job request 0 for plan 9a310ba2-c6f8-4657-98d0-59c2b5ec8078 job 538b0134-e50c-5a3e-9beb-e048ca265506 received.
+[2025-03-24 08:47:31Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-03-24 08:47:31Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-03-24 08:47:31Z INFO JobDispatcher] Job request d792edf2-ac8d-51be-bd49-b6895ec3b27d processed succeed.
+[2025-03-24 08:47:31Z INFO Terminal] WRITE LINE: 2025-03-24 08:47:31Z: Running job: build-and-release
+[2025-03-24 08:47:31Z INFO JobDispatcher] Start renew job request 0 for job 538b0134-e50c-5a3e-9beb-e048ca265506.
+[2025-03-24 08:47:32Z INFO JobDispatcher] Successfully renew job 538b0134-e50c-5a3e-9beb-e048ca265506, job is valid till 2025-03-24 8:57:32 AM
+[2025-03-24 08:47:32Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 150 153'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-03-24 08:47:32Z INFO ProcessInvokerWrapper] Process started with process id 67125, waiting for process exit.
+[2025-03-24 08:47:32Z INFO JobDispatcher] Send job request message to worker for job 538b0134-e50c-5a3e-9beb-e048ca265506.
+[2025-03-24 08:47:32Z INFO ProcessChannel] Sending message of length 18883, with hash '1251865dd0f7ad5853ffde68334224f0f49b21a51bc2a76d3358df84b68ea133'
+[2025-03-24 08:47:32Z INFO JobNotification] Entering JobStarted Notification
+[2025-03-24 08:47:32Z INFO JobNotification] Entering StartMonitor
+[2025-03-24 08:47:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:47:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:47:50Z INFO ProcessInvokerWrapper] Finished process 67125 with exit code 102, and elapsed time 00:00:18.5371158.
+[2025-03-24 08:47:50Z INFO JobDispatcher] Worker finished for job 538b0134-e50c-5a3e-9beb-e048ca265506. Code: 102
+[2025-03-24 08:47:50Z INFO JobDispatcher] finish job request for job 538b0134-e50c-5a3e-9beb-e048ca265506 with result: Failed
+[2025-03-24 08:47:50Z INFO Terminal] WRITE LINE: 2025-03-24 08:47:50Z: Job build-and-release completed with result: Failed
+[2025-03-24 08:47:50Z INFO JobDispatcher] Stop renew job request for job 538b0134-e50c-5a3e-9beb-e048ca265506.
+[2025-03-24 08:47:50Z INFO JobDispatcher] job renew has been cancelled, stop renew job 538b0134-e50c-5a3e-9beb-e048ca265506.
+[2025-03-24 08:47:50Z INFO JobNotification] Entering JobCompleted Notification
+[2025-03-24 08:47:50Z INFO JobNotification] Entering EndMonitor
+[2025-03-24 08:47:50Z INFO MessageListener] Received job status event. JobState: Online
+[2025-03-24 08:48:46Z INFO MessageListener] Message '7277659812267781982' received from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed'.
+[2025-03-24 08:48:46Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:48:46Z INFO ConfigurationStore] stored True
+[2025-03-24 08:48:46Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:48:46Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:48:46Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:48:46Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:48:46Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:48:46Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:48:46Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:48:47Z INFO JobDispatcher] Job request 0 for plan 4f7b0850-0c7a-47cd-ac47-21b96073d78a job 024676de-e9fd-5a6f-9c03-fa5201a397b6 received.
+[2025-03-24 08:48:47Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-03-24 08:48:47Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-03-24 08:48:47Z INFO JobDispatcher] Job request 538b0134-e50c-5a3e-9beb-e048ca265506 processed succeed.
+[2025-03-24 08:48:47Z INFO Terminal] WRITE LINE: 2025-03-24 08:48:47Z: Running job: build-and-release
+[2025-03-24 08:48:47Z INFO JobDispatcher] Start renew job request 0 for job 024676de-e9fd-5a6f-9c03-fa5201a397b6.
+[2025-03-24 08:48:48Z INFO JobDispatcher] Successfully renew job 024676de-e9fd-5a6f-9c03-fa5201a397b6, job is valid till 2025-03-24 8:58:48 AM
+[2025-03-24 08:48:48Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 150 153'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-03-24 08:48:48Z INFO ProcessInvokerWrapper] Process started with process id 67479, waiting for process exit.
+[2025-03-24 08:48:48Z INFO JobDispatcher] Send job request message to worker for job 024676de-e9fd-5a6f-9c03-fa5201a397b6.
+[2025-03-24 08:48:48Z INFO ProcessChannel] Sending message of length 18875, with hash 'e1f33940f3cdfb27678085bad32224e2107d8b3731e09d7b3e7d514107b1b542'
+[2025-03-24 08:48:48Z INFO JobNotification] Entering JobStarted Notification
+[2025-03-24 08:48:48Z INFO JobNotification] Entering StartMonitor
+[2025-03-24 08:49:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:49:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:49:06Z INFO ProcessInvokerWrapper] Finished process 67479 with exit code 102, and elapsed time 00:00:18.7228833.
+[2025-03-24 08:49:06Z INFO JobDispatcher] Worker finished for job 024676de-e9fd-5a6f-9c03-fa5201a397b6. Code: 102
+[2025-03-24 08:49:06Z INFO JobDispatcher] finish job request for job 024676de-e9fd-5a6f-9c03-fa5201a397b6 with result: Failed
+[2025-03-24 08:49:06Z INFO Terminal] WRITE LINE: 2025-03-24 08:49:06Z: Job build-and-release completed with result: Failed
+[2025-03-24 08:49:06Z INFO JobDispatcher] Stop renew job request for job 024676de-e9fd-5a6f-9c03-fa5201a397b6.
+[2025-03-24 08:49:06Z INFO JobDispatcher] job renew has been cancelled, stop renew job 024676de-e9fd-5a6f-9c03-fa5201a397b6.
+[2025-03-24 08:49:06Z INFO JobNotification] Entering JobCompleted Notification
+[2025-03-24 08:49:06Z INFO JobNotification] Entering EndMonitor
+[2025-03-24 08:49:06Z INFO MessageListener] Received job status event. JobState: Online
+[2025-03-24 08:54:24Z INFO MessageListener] Message '6538365620531484144' received from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed'.
+[2025-03-24 08:54:24Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:54:24Z INFO ConfigurationStore] stored True
+[2025-03-24 08:54:24Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:54:24Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:54:24Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:54:24Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:54:24Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:54:24Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:54:24Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:54:25Z INFO JobDispatcher] Job request 0 for plan 029d3c6e-aeb9-4a56-8e7b-d6a7697fa056 job 0bcc1166-d258-57bb-a298-d224221e71c6 received.
+[2025-03-24 08:54:25Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-03-24 08:54:25Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-03-24 08:54:25Z INFO JobDispatcher] Job request 024676de-e9fd-5a6f-9c03-fa5201a397b6 processed succeed.
+[2025-03-24 08:54:25Z INFO Terminal] WRITE LINE: 2025-03-24 08:54:25Z: Running job: build-and-release
+[2025-03-24 08:54:25Z INFO JobDispatcher] Start renew job request 0 for job 0bcc1166-d258-57bb-a298-d224221e71c6.
+[2025-03-24 08:54:25Z INFO JobDispatcher] Successfully renew job 0bcc1166-d258-57bb-a298-d224221e71c6, job is valid till 2025-03-24 9:04:25 AM
+[2025-03-24 08:54:25Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 150 153'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-03-24 08:54:25Z INFO ProcessInvokerWrapper] Process started with process id 68239, waiting for process exit.
+[2025-03-24 08:54:25Z INFO JobDispatcher] Send job request message to worker for job 0bcc1166-d258-57bb-a298-d224221e71c6.
+[2025-03-24 08:54:25Z INFO ProcessChannel] Sending message of length 18905, with hash '70340437cc46c1e0cc73d54e126ab6b83523a69d052aae3c67c7237b3f003bbd'
+[2025-03-24 08:54:25Z INFO JobNotification] Entering JobStarted Notification
+[2025-03-24 08:54:25Z INFO JobNotification] Entering StartMonitor
+[2025-03-24 08:54:33Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:54:33Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:54:33Z INFO ProcessInvokerWrapper] Finished process 68239 with exit code 102, and elapsed time 00:00:08.0570669.
+[2025-03-24 08:54:33Z INFO JobDispatcher] Worker finished for job 0bcc1166-d258-57bb-a298-d224221e71c6. Code: 102
+[2025-03-24 08:54:33Z INFO JobDispatcher] finish job request for job 0bcc1166-d258-57bb-a298-d224221e71c6 with result: Failed
+[2025-03-24 08:54:33Z INFO Terminal] WRITE LINE: 2025-03-24 08:54:33Z: Job build-and-release completed with result: Failed
+[2025-03-24 08:54:33Z INFO JobDispatcher] Stop renew job request for job 0bcc1166-d258-57bb-a298-d224221e71c6.
+[2025-03-24 08:54:33Z INFO JobDispatcher] job renew has been cancelled, stop renew job 0bcc1166-d258-57bb-a298-d224221e71c6.
+[2025-03-24 08:54:33Z INFO JobNotification] Entering JobCompleted Notification
+[2025-03-24 08:54:33Z INFO JobNotification] Entering EndMonitor
+[2025-03-24 08:54:33Z INFO MessageListener] Received job status event. JobState: Online
+[2025-03-24 08:55:33Z INFO MessageListener] Message '1592546487904078536' received from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed'.
+[2025-03-24 08:55:33Z INFO ConfigurationStore] HasCredentials()
+[2025-03-24 08:55:33Z INFO ConfigurationStore] stored True
+[2025-03-24 08:55:33Z INFO CredentialManager] GetCredentialProvider
+[2025-03-24 08:55:33Z INFO CredentialManager] Creating type OAuth
+[2025-03-24 08:55:33Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-24 08:55:33Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:55:33Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:55:33Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 08:55:34Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 08:55:35Z INFO JobDispatcher] Job request 0 for plan e290d7a5-cc7c-478c-8d45-b024e5efbfea job 885e0a74-6837-5a34-ba46-7823dd4e8be5 received.
+[2025-03-24 08:55:35Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-03-24 08:55:35Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-03-24 08:55:35Z INFO JobDispatcher] Job request 0bcc1166-d258-57bb-a298-d224221e71c6 processed succeed.
+[2025-03-24 08:55:35Z INFO Terminal] WRITE LINE: 2025-03-24 08:55:35Z: Running job: build-and-release
+[2025-03-24 08:55:35Z INFO JobDispatcher] Start renew job request 0 for job 885e0a74-6837-5a34-ba46-7823dd4e8be5.
+[2025-03-24 08:55:35Z INFO JobDispatcher] Successfully renew job 885e0a74-6837-5a34-ba46-7823dd4e8be5, job is valid till 2025-03-24 9:05:35 AM
+[2025-03-24 08:55:35Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 152 155'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-03-24 08:55:35Z INFO ProcessInvokerWrapper] Process started with process id 68565, waiting for process exit.
+[2025-03-24 08:55:35Z INFO JobDispatcher] Send job request message to worker for job 885e0a74-6837-5a34-ba46-7823dd4e8be5.
+[2025-03-24 08:55:35Z INFO ProcessChannel] Sending message of length 18917, with hash '6e4eb1d4c09605759d5f23fda522c34458c25342b640769f9a3a26a194cf0dea'
+[2025-03-24 08:55:35Z INFO JobNotification] Entering JobStarted Notification
+[2025-03-24 08:55:35Z INFO JobNotification] Entering StartMonitor
+[2025-03-24 08:55:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:57Z INFO ProcessInvokerWrapper] Finished process 68565 with exit code 102, and elapsed time 00:00:21.5926602.
+[2025-03-24 08:55:57Z INFO JobDispatcher] Worker finished for job 885e0a74-6837-5a34-ba46-7823dd4e8be5. Code: 102
+[2025-03-24 08:55:57Z INFO JobDispatcher] finish job request for job 885e0a74-6837-5a34-ba46-7823dd4e8be5 with result: Failed
+[2025-03-24 08:55:57Z INFO Terminal] WRITE LINE: 2025-03-24 08:55:57Z: Job build-and-release completed with result: Failed
+[2025-03-24 08:55:57Z INFO JobDispatcher] Stop renew job request for job 885e0a74-6837-5a34-ba46-7823dd4e8be5.
+[2025-03-24 08:55:57Z INFO JobDispatcher] job renew has been cancelled, stop renew job 885e0a74-6837-5a34-ba46-7823dd4e8be5.
+[2025-03-24 08:55:57Z INFO JobNotification] Entering JobCompleted Notification
+[2025-03-24 08:55:57Z INFO JobNotification] Entering EndMonitor
+[2025-03-24 08:55:57Z INFO MessageListener] Received job status event. JobState: Online
+[2025-03-24 09:24:59Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 09:25:00Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 09:25:50Z INFO MessageListener] No message retrieved from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed' within last 30 minutes.
+[2025-03-24 09:30:02Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 09:30:02Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 09:56:02Z INFO MessageListener] No message retrieved from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed' within last 30 minutes.
+[2025-03-24 10:15:22Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 10:15:22Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 10:25:26Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_rsaparams
+[2025-03-24 10:25:26Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-24 10:26:17Z INFO MessageListener] No message retrieved from session '2bcaaf5b-eb90-445e-9957-e5f7bdc8a1ed' within last 30 minutes.

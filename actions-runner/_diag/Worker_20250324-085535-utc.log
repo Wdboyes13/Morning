@@ -1,0 +1,2838 @@
+[2025-03-24 08:55:35Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-03-24 08:55:35Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:35Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:35Z INFO HostContext] Well known config file 'Credentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials'
+[2025-03-24 08:55:35Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:35Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:35Z INFO HostContext] Well known config file 'Runner': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner'
+[2025-03-24 08:55:35Z INFO Worker] Version: 2.323.0
+[2025-03-24 08:55:35Z INFO Worker] Commit: d8b82f44a9ec0258904d5869ae683c31d5aac299
+[2025-03-24 08:55:35Z INFO Worker] Culture: en-CA
+[2025-03-24 08:55:35Z INFO Worker] UI Culture: en-CA
+[2025-03-24 08:55:35Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-03-24 08:55:35Z INFO ProcessChannel] Receiving message of length 18917, with hash '6e4eb1d4c09605759d5f23fda522c34458c25342b640769f9a3a26a194cf0dea'
+[2025-03-24 08:55:35Z INFO Worker] Message received.
+[2025-03-24 08:55:36Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/auto-release.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v2",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 16,
+        "col": 15,
+        "lit": "Check out the repository"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "ab718983-ac57-4864-b054-cf950e165412",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 19,
+        "col": 15,
+        "lit": "Build the Xcode project"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 14,
+              "lit": "/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project Morning.xcodeproj -scheme \"Morning-Rem\" -configuration Release clean build -derivedDataPath ./build\n# Replace Morning.xcodeproj with your actual project file if needed\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "7a57d5aa-3d0c-4a83-b542-1b7abe3a3064",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 24,
+        "col": 15,
+        "lit": "Create Release"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 25,
+              "col": 14,
+              "lit": "gh release create \"$(date +\"%Y-%m-%d-%H-%M-%S\")\" build/Morning.app --title \"$(date +\"%Y-%m-%d-%H-%M-%S\")\" --notes \"Release created on $(date +\"%Y-%m-%d-%H-%M-%S\")\" --repo Wdboyes13/Morning\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "f4dcaf5f-7f3b-4889-acea-7d55402f2535",
+      "name": "__run_2"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "build-and-release"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "e290d7a5-cc7c-478c-8d45-b024e5efbfea.build-and-release.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "build-and-release"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "e290d7a5-cc7c-478c-8d45-b024e5efbfea",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "e290d7a5-cc7c-478c-8d45-b024e5efbfea",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "885e0a74-6837-5a34-ba46-7823dd4e8be5",
+  "jobDisplayName": "build-and-release",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://acghubeus2.actions.githubusercontent.com/RFXg87af0T06gJQkU6A1llVzIdHhIxsQ7C5OzWux56IP7mjSHq/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus5.actions.githubusercontent.com/RFXg87af0T06gJQkU6A1llVzIdHhIxsQ7C5OzWux56IP7mjSHq/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-3-azure-eastus.actions.githubusercontent.com/24/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "e15c3eff4295f664d61c37710bf5784015b7e87a"
+        },
+        {
+          "k": "repository",
+          "v": "Wdboyes13/Morning"
+        },
+        {
+          "k": "repository_owner",
+          "v": "Wdboyes13"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "176845407"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/Wdboyes13/Morning.git"
+        },
+        {
+          "k": "run_id",
+          "v": "14031071191"
+        },
+        {
+          "k": "run_number",
+          "v": "16"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "176845407"
+        },
+        {
+          "k": "actor",
+          "v": "Wdboyes13"
+        },
+        {
+          "k": "workflow",
+          "v": "Build Xcode Project"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "e15c3eff4295f664d61c37710bf5784015b7e87a"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "fd4dc694ad1ce6b4e7568ad6ba887469c937282d"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "modes-recheck-0r@icloud.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Wdboyes13"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Wdboyes13"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "e15c3eff4295f664d61c37710bf5784015b7e87a"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Update auto-release.yml"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2025-03-24T01:55:30-07:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "d81ff8d7fb40368a2ee1b8bcee71406c5014916b"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/Wdboyes13/Morning/commit/e15c3eff4295f664d61c37710bf5784015b7e87a"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/Wdboyes13/Morning/compare/fd4dc694ad1c...e15c3eff4295"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "modes-recheck-0r@icloud.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Wdboyes13"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Wdboyes13"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "e15c3eff4295f664d61c37710bf5784015b7e87a"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Update auto-release.yml"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2025-03-24T01:55:30-07:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "d81ff8d7fb40368a2ee1b8bcee71406c5014916b"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/Wdboyes13/Morning/commit/e15c3eff4295f664d61c37710bf5784015b7e87a"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "modes-recheck-0r@icloud.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "Wdboyes13"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/Wdboyes13/Morning.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1741972451.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "Wdboyes13/Morning"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/Wdboyes13/Morning.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Wdboyes13/Morning"
+                    },
+                    {
+                      "k": "id",
+                      "v": 948631057.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Swift"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "Morning"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOOIr2EQ"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/176845407?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "modes-recheck-0r@icloud.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/Wdboyes13/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/Wdboyes13/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/Wdboyes13/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/Wdboyes13/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/Wdboyes13"
+                          },
+                          {
+                            "k": "id",
+                            "v": 176845407.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "Wdboyes13"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Wdboyes13"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOCopyXw"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/Wdboyes13/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/Wdboyes13/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/Wdboyes13/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/Wdboyes13/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/Wdboyes13/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/Wdboyes13"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1742806530.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 52.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:Wdboyes13/Morning.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 1.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 1.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/Wdboyes13/Morning"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-03-24T08:54:24Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/Wdboyes13/Morning"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 1.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 1.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/176845407?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/Wdboyes13/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/Wdboyes13/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/Wdboyes13/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/Wdboyes13/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Wdboyes13"
+                    },
+                    {
+                      "k": "id",
+                      "v": 176845407.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "Wdboyes13"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOCopyXw"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/Wdboyes13/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/Wdboyes13/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/Wdboyes13/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/Wdboyes13/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/Wdboyes13/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/Wdboyes13"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Wdboyes13/Morning/.github/workflows/auto-release.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "e15c3eff4295f664d61c37710bf5784015b7e87a"
+        },
+        {
+          "k": "repository_id",
+          "v": "948631057"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "Wdboyes13"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOCopyXw"
+}
+[2025-03-24 08:55:36Z INFO JobRunner] Job ID 885e0a74-6837-5a34-ba46-7823dd4e8be5
+[2025-03-24 08:55:36Z INFO ConfigurationStore] currentAssemblyLocation: /Users/william/Documents/coding2.nosync/Morning/actions-runner/bin/Runner.Worker.dll
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] binPath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/bin
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] RootFolder: /Users/william/Documents/coding2.nosync/Morning/actions-runner
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'Runner': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] ConfigFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'MigratedRunner': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner_migrated'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] MigratedConfigFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.runner_migrated
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'Credentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] CredFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_migrated'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] MigratedCredFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials_migrated
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'Service': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.service'
+[2025-03-24 08:55:36Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/william/Documents/coding2.nosync/Morning/actions-runner/.service
+[2025-03-24 08:55:36Z INFO ConfigurationStore] Read setting file: 298 chars
+[2025-03-24 08:55:36Z INFO JobRunner] Initializing launch client
+[2025-03-24 08:55:36Z INFO JobServerQueue] Initializing results client
+[2025-03-24 08:55:36Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-03-24 08:55:36Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Start process web console line queue.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Start process file upload queue.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Start results file upload queue.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-03-24 08:55:36Z INFO JobServerQueue] Start process timeline update queue.
+[2025-03-24 08:55:36Z INFO ExecutionContext] Initialize GitHub context
+[2025-03-24 08:55:36Z INFO ExecutionContext] Initialize Env context
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:36Z INFO JobRunner] Starting the job execution context.
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO JobRunner] Validating directory permissions for: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Tools': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_tool'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:36Z INFO JobRunner] Getting job extension.
+[2025-03-24 08:55:36Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'Credentials': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.credentials'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known config file 'SetupInfo': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/.setup_info'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO PipelineDirectoryManager] Loading tracking config if exists: /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_PipelineMapping/Wdboyes13/Morning/PipelineFolder.json
+[2025-03-24 08:55:36Z INFO PipelineDirectoryManager] Updating job run properties.
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO JobExtension] Downloading actions
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:36Z INFO Worker] Listening for cancel message from the channel.
+[2025-03-24 08:55:36Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-03-24 08:55:36Z INFO ResultServer] Successfully started websocket client.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '069b24a9-e940-479d-a7f7-f2f3ea7d43b0', success rate: 1/1.
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:36Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:36Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/tarball/ee0669bd1cc54295c223e0bb666b733df41de1c5' into /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/_temp_5ce11665-5009-4ada-9a46-2350235b77d3/ac62a841-288f-4c4a-af5f-55d01a2c1d0e.tar.gz.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '069b24a9-e940-479d-a7f7-f2f3ea7d43b0', success rate: 1/1.
+[2025-03-24 08:55:36Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-03-24 08:55:37Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/tarball/ee0669bd1cc54295c223e0bb666b733df41de1c5 X-GitHub-Request-Id: EDE4:37C052:43998F:70A032:67E11E09 Http Status: OK
+[2025-03-24 08:55:37Z INFO ActionManager] Which2: 'tar'
+[2025-03-24 08:55:37Z INFO ActionManager] Location: '/usr/bin/tar'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/_temp_5ce11665-5009-4ada-9a46-2350235b77d3/ac62a841-288f-4c4a-af5f-55d01a2c1d0e.tar.gz"'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/_temp_5ce11665-5009-4ada-9a46-2350235b77d3/_staging'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] Process started with process id 68571, waiting for process exit.
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] Finished process 68571 with exit code 0, and elapsed time 00:00:00.0653873.
+[2025-03-24 08:55:37Z INFO ActionManager] Finished getting action repository.
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-03-24 08:55:37Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:37Z INFO ActionManager] Load action that reference repository from '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/actions/checkout/v2'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-03-24 08:55:37Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-03-24 08:55:37Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-03-24 08:55:37Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-03-24 08:55:37Z INFO JobExtension] Adding .
+[2025-03-24 08:55:37Z INFO JobExtension] Adding .
+[2025-03-24 08:55:37Z INFO JobExtension] Adding .
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO JobExtension] Total accessible running process: 352.
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO JobExtension] Start checking service connectivity in background.
+[2025-03-24 08:55:37Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "069b24a9-e940-479d-a7f7-f2f3ea7d43b0",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-03-24T08:55:36.076415Z",
+  "finishTime": "2025-03-24T08:55:37.892696Z"
+}.
+[2025-03-24 08:55:37Z INFO JobRunner] Total job steps: 3.
+[2025-03-24 08:55:37Z INFO JobRunner] Run all job steps.
+[2025-03-24 08:55:37Z INFO StepsRunner] Processing step: DisplayName='Check out the repository'
+[2025-03-24 08:55:37Z INFO StepsRunner] Evaluating: success()
+[2025-03-24 08:55:37Z INFO StepsRunner] Result: true
+[2025-03-24 08:55:37Z INFO StepsRunner] Starting the step.
+[2025-03-24 08:55:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '069b24a9-e940-479d-a7f7-f2f3ea7d43b0', success rate: 1/1.
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:37Z INFO ActionManager] Load action that reference repository from '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/actions/checkout/v2'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-03-24 08:55:37Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-03-24 08:55:37Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-03-24 08:55:37Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-03-24 08:55:37Z INFO ExecutionContext] Reserve record order 5 to 8 for post job actions.
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:37Z INFO ExecutionContext] Write event payload to /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:37Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Wdboyes13/Morning"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-03-24 08:55:37Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:37Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command error
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command group
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-03-24 08:55:37Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:37Z INFO HostContext] Well known directory 'Externals': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/externals'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/externals/node20/bin/node'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Arguments: '"/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/actions/checkout/v2/dist/index.js"'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/Morning/Morning'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:37Z INFO ProcessInvokerWrapper] Process started with process id 68573, waiting for process exit.
+[2025-03-24 08:55:38Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-03-24 08:55:38Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-03-24 08:55:38Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/blocks/e290d7a5-cc7c-478c-8d45-b024e5efbfea_069b24a9-e940-479d-a7f7-f2f3ea7d43b0.1
+[2025-03-24 08:55:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ab718983-ac57-4864-b054-cf950e165412', success rate: 1/1.
+[2025-03-24 08:55:38Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2025-03-24 08:55:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ab718983-ac57-4864-b054-cf950e165412', success rate: 1/1.
+[2025-03-24 08:55:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ab718983-ac57-4864-b054-cf950e165412', success rate: 1/1.
+[2025-03-24 08:55:38Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-03-24 08:55:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ab718983-ac57-4864-b054-cf950e165412', success rate: 1/1.
+[2025-03-24 08:55:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ab718983-ac57-4864-b054-cf950e165412', success rate: 1/1.
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper] Finished process 68573 with exit code 0, and elapsed time 00:00:01.7431051.
+[2025-03-24 08:55:39Z INFO CreateStepSummaryCommand] Step Summary file (/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/_runner_file_commands/step_summary_6478d3e9-72a1-4eb4-9313-12a7e0757dab) is empty; skipping attachment upload
+[2025-03-24 08:55:39Z INFO StepsRunner] Step result: 
+[2025-03-24 08:55:39Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v2",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "ab718983-ac57-4864-b054-cf950e165412",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-03-24T08:55:37.899481Z",
+  "finishTime": "2025-03-24T08:55:39.685391Z"
+}.
+[2025-03-24 08:55:39Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-03-24 08:55:39Z INFO StepsRunner] Current state: job state = ''
+[2025-03-24 08:55:39Z INFO StepsRunner] Processing step: DisplayName='Build the Xcode project'
+[2025-03-24 08:55:39Z INFO StepsRunner] Evaluating: success()
+[2025-03-24 08:55:39Z INFO StepsRunner] Result: true
+[2025-03-24 08:55:39Z INFO StepsRunner] Starting the step.
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:39Z INFO ExecutionContext] Write event payload to /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:39Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-03-24 08:55:39Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command error
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command group
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-03-24 08:55:39Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-03-24 08:55:39Z INFO ScriptHandler] Which2: 'bash'
+[2025-03-24 08:55:39Z INFO ScriptHandler] Location: '/opt/homebrew/bin/bash'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:39Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:39Z INFO ScriptHandler] Which2: 'bash'
+[2025-03-24 08:55:39Z INFO ScriptHandler] Location: '/opt/homebrew/bin/bash'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   File name: '/opt/homebrew/bin/bash'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Arguments: '-e /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/51632309-f08a-43e3-9094-e8c1049e856a.sh'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/Morning/Morning'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:39Z INFO ProcessInvokerWrapper] Process started with process id 68681, waiting for process exit.
+[2025-03-24 08:55:39Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-03-24 08:55:39Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/blocks/e290d7a5-cc7c-478c-8d45-b024e5efbfea_ab718983-ac57-4864-b054-cf950e165412.1
+[2025-03-24 08:55:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ab718983-ac57-4864-b054-cf950e165412', success rate: 1/1.
+[2025-03-24 08:55:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:40Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-03-24 08:55:40Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-03-24 08:55:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:47Z INFO JobServerQueue] Try to append 2 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 2/2.
+[2025-03-24 08:55:47Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:47Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:47Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68681 with exit code 65, and elapsed time 00:00:14.6126587.
+[2025-03-24 08:55:54Z INFO CreateStepSummaryCommand] Step Summary file (/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/_runner_file_commands/step_summary_a62c6ee6-ee52-4f7d-9b08-f8f8b953c3ae) is empty; skipping attachment upload
+[2025-03-24 08:55:54Z INFO StepsRunner] Step result: Failed
+[2025-03-24 08:55:54Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "sh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "7a57d5aa-3d0c-4a83-b542-1b7abe3a3064",
+  "stepContextName": "__run",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 65."
+  ],
+  "executionTimeInSeconds": 15,
+  "startTime": "2025-03-24T08:55:39.686084Z",
+  "finishTime": "2025-03-24T08:55:54.318047Z"
+}.
+[2025-03-24 08:55:54Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-03-24 08:55:54Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-03-24 08:55:54Z INFO StepsRunner] Processing step: DisplayName='Create Release'
+[2025-03-24 08:55:54Z INFO StepsRunner] Evaluating: success()
+[2025-03-24 08:55:54Z INFO StepsRunner] Result: false
+[2025-03-24 08:55:54Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-03-24 08:55:54Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-03-24 08:55:54Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-03-24 08:55:54Z INFO StepsRunner] Processing step: DisplayName='Post Check out the repository'
+[2025-03-24 08:55:54Z INFO StepsRunner] Evaluating: always()
+[2025-03-24 08:55:54Z INFO StepsRunner] Result: true
+[2025-03-24 08:55:54Z INFO StepsRunner] Starting the step.
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:54Z INFO ActionManager] Load action that reference repository from '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/actions/checkout/v2'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Actions': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions'
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-03-24 08:55:54Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-03-24 08:55:54Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-03-24 08:55:54Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:54Z INFO ExecutionContext] Write event payload to /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Work': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Temp': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp'
+[2025-03-24 08:55:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Wdboyes13/Morning"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-03-24 08:55:54Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2025-03-24 08:55:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command error
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command group
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-03-24 08:55:54Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Externals': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/externals'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/externals/node20/bin/node'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: '"/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_actions/actions/checkout/v2/dist/index.js"'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/Morning/Morning'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68732, waiting for process exit.
+[2025-03-24 08:55:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7a57d5aa-3d0c-4a83-b542-1b7abe3a3064', success rate: 1/1.
+[2025-03-24 08:55:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '40f5ea75-abe2-45e3-b4c1-cdbf96874009', success rate: 1/1.
+[2025-03-24 08:55:54Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2025-03-24 08:55:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '40f5ea75-abe2-45e3-b4c1-cdbf96874009', success rate: 1/1.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68732 with exit code 0, and elapsed time 00:00:00.5014307.
+[2025-03-24 08:55:54Z INFO CreateStepSummaryCommand] Step Summary file (/Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp/_runner_file_commands/step_summary_9c9f40b7-c96b-4d14-b9e2-541635553ebe) is empty; skipping attachment upload
+[2025-03-24 08:55:54Z INFO StepsRunner] Step result: 
+[2025-03-24 08:55:54Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v2",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "40f5ea75-abe2-45e3-b4c1-cdbf96874009",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-03-24T08:55:54.320789Z",
+  "finishTime": "2025-03-24T08:55:54.827987Z"
+}.
+[2025-03-24 08:55:54Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-03-24 08:55:54Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-03-24 08:55:54Z INFO JobRunner] Finalize job.
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:54Z INFO JobExtension] Initialize Env context
+[2025-03-24 08:55:54Z INFO JobExtension] Initialize steps context
+[2025-03-24 08:55:54Z INFO JobExtension] Total accessible running process: 356.
+[2025-03-24 08:55:54Z INFO JobExtension] Inspecting process environment variables. PID: 68712 (mdmclient)
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 68712 -o command`
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 68712 -o command'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68815, waiting for process exit.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68815 with exit code 0, and elapsed time 00:00:00.0238907.
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Successfully dump environment variables for 68712
+[2025-03-24 08:55:54Z INFO JobExtension] Inspecting process environment variables. PID: 68710 (mdworker_shared)
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 68710 -o command`
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 68710 -o command'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68816, waiting for process exit.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68816 with exit code 0, and elapsed time 00:00:00.0163572.
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Successfully dump environment variables for 68710
+[2025-03-24 08:55:54Z INFO JobExtension] Inspecting process environment variables. PID: 68706 (ibtoold)
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 68706 -o command`
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 68706 -o command'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68817, waiting for process exit.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68817 with exit code 0, and elapsed time 00:00:00.0150418.
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Successfully dump environment variables for 68706
+[2025-03-24 08:55:54Z INFO JobExtension] Inspecting process environment variables. PID: 68705 (ibtoold)
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 68705 -o command`
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 68705 -o command'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68818, waiting for process exit.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68818 with exit code 0, and elapsed time 00:00:00.0196711.
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Successfully dump environment variables for 68705
+[2025-03-24 08:55:54Z INFO JobExtension] Inspecting process environment variables. PID: 68664 (mdworker_shared)
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 68664 -o command`
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 68664 -o command'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68819, waiting for process exit.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68819 with exit code 0, and elapsed time 00:00:00.0228962.
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Successfully dump environment variables for 68664
+[2025-03-24 08:55:54Z INFO JobExtension] Inspecting process environment variables. PID: 68579 (mdworker_shared)
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 68579 -o command`
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:54Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Starting process:
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 68579 -o command'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Working directory: '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Process started with process id 68820, waiting for process exit.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-03-24 08:55:54Z INFO ProcessInvokerWrapper] Finished process 68820 with exit code 0, and elapsed time 00:00:00.0168990.
+[2025-03-24 08:55:54Z INFO LinuxProcessExtensions] Successfully dump environment variables for 68579
+[2025-03-24 08:55:54Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "5feb3f5d-674c-46a9-933d-5ac928756d1f",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-03-24T08:55:54.830963Z",
+  "finishTime": "2025-03-24T08:55:54.961512Z"
+}.
+[2025-03-24 08:55:54Z INFO JobRunner] Job result after all job steps finish: Failed
+[2025-03-24 08:55:54Z INFO JobRunner] Completing the job execution context.
+[2025-03-24 08:55:54Z INFO JobRunner] Shutting down the job server queue.
+[2025-03-24 08:55:54Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-03-24 08:55:55Z INFO JobServerQueue] All queue process task stopped.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Try to append 1 batches web console lines for record '40f5ea75-abe2-45e3-b4c1-cdbf96874009', success rate: 1/1.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5feb3f5d-674c-46a9-933d-5ac928756d1f', success rate: 1/1.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Web console line queue drained.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Uploading 4 files in one shot.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Try to upload 4 log files or attachments, success rate: 4/4.
+[2025-03-24 08:55:55Z INFO JobServerQueue] File upload queue drained.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-03-24 08:55:55Z INFO JobServerQueue] Uploading 4 file(s) in one shot through results service.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/blocks/e290d7a5-cc7c-478c-8d45-b024e5efbfea_7a57d5aa-3d0c-4a83-b542-1b7abe3a3064.1
+[2025-03-24 08:55:55Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-03-24 08:55:55Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/blocks/e290d7a5-cc7c-478c-8d45-b024e5efbfea_40f5ea75-abe2-45e3-b4c1-cdbf96874009.1
+[2025-03-24 08:55:56Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-03-24 08:55:56Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/blocks/e290d7a5-cc7c-478c-8d45-b024e5efbfea_5feb3f5d-674c-46a9-933d-5ac928756d1f.1
+[2025-03-24 08:55:56Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-03-24 08:55:56Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, /Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/blocks/e290d7a5-cc7c-478c-8d45-b024e5efbfea_885e0a74-6837-5a34-ba46-7823dd4e8be5.1
+[2025-03-24 08:55:56Z INFO JobServerQueue] Tried to upload 4 file(s) to results, success rate: 4/4.
+[2025-03-24 08:55:56Z INFO JobServerQueue] Results upload queue drained.
+[2025-03-24 08:55:56Z INFO JobServerQueue] Timeline update queue drained.
+[2025-03-24 08:55:56Z INFO JobServerQueue] Disposing job server ...
+[2025-03-24 08:55:56Z INFO JobServerQueue] Disposing results server ...
+[2025-03-24 08:55:56Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-03-24 08:55:56Z INFO TempDirectoryManager] Cleaning runner temp folder: /Users/william/Documents/coding2.nosync/Morning/actions-runner/_work/_temp
+[2025-03-24 08:55:56Z INFO HostContext] Well known directory 'Bin': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/bin'
+[2025-03-24 08:55:56Z INFO HostContext] Well known directory 'Root': '/Users/william/Documents/coding2.nosync/Morning/actions-runner'
+[2025-03-24 08:55:56Z INFO HostContext] Well known directory 'Diag': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag'
+[2025-03-24 08:55:56Z INFO HostContext] Well known config file 'Telemetry': '/Users/william/Documents/coding2.nosync/Morning/actions-runner/_diag/.telemetry'
+[2025-03-24 08:55:56Z INFO JobRunner] Raising job completed against run service
+[2025-03-24 08:55:57Z INFO Worker] Job completed.

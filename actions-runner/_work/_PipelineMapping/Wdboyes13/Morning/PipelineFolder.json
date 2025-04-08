@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "Wdboyes13/Morning",
+  "pipelineDirectory": "Morning",
+  "workspaceDirectory": "Morning/Morning",
+  "repositories": {
+    "Wdboyes13/Morning": {
+      "repositoryPath": "Morning/Morning",
+      "lastRunOn": "03/24/2025 01:36:46 -07:00"
+    }
+  },
+  "lastRunOn": "03/24/2025 01:55:36 -07:00"
+}
